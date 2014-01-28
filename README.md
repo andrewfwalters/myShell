@@ -1,11 +1,10 @@
 myShell
 =======
 
-a terminal interface for UNIX systems programmed in C
------------------------------------------------------
+Terminal Interface for UNIX
+---------------------------
 
-pair programmed by **Andrew Walters** and **Matthew Thorp**
------------------------------------------------------------
+Pair Programmed by Andrew Walters and Matthew Thorp
 
 The primary control structure of the shell is an infinite loop that
 - reads input from STDIN
