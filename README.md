@@ -1,31 +1,23 @@
-## Synopsis
+myShell
+=======
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+a terminal interface for UNIX systems programmed in C
+-----------------------------------------------------
 
-## Code Example
+pair programmed by **Andrew Walters** and **Matthew Thorp**
+-----------------------------------------------------------
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+The primary control structure of the shell is an infinite loop that
+- reads input from STDIN
+- checks for specific inputs such as "exit" which will break out of loop
+- parses the input in to tokens, or space separated strings
+- prepares an array of tokens to be passed into a function
+- forks the process, creating a child process that can run in the background or foreground
 
-## Motivation
+The shell also handles signals
+- CTRL+C (SIG_IGN) kills the currently executing child process, but not the shell
+- CTRL+Z (SIGTSTP) suspends the currently executing child process but allows the shell to continue execution
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-
-## Installation
-
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+Future improvements to this project include
+- A handler for "cd"
+- Movement of code from main into functions for readability and troubleshooting
